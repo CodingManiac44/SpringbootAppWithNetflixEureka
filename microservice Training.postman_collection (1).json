@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "268b6b31-e06e-49b8-a13b-e2bb405022d0",
+		"name": "microservice Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add http://localhost:8082/api/product/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\":\"iphone 8\",\n    \"productSKU\":\"zxc\",\n    \"productDescription\":\"released on 2020\",\n    \"productPrice\":80000,\n    \"productWeight\":200,\n    \"qty\" : 4,\n    \"productCategory\" : \"phone\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/product/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list http://localhost:8082/api/product/list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productName\":\"iphone 8\",\n    \"productSKU\":\"zxc\",\n    \"productDescription\":\"released on 2020\",\n    \"productPrice\":80000,\n    \"productWeight\":200,\n    \"qty\" : 4,\n    \"productCategory\" : \"phone\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/product/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update http://localhost:8082/api/product/update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"productId\": 8,\n        \"productName\": \"iphone 8\",\n        \"productSKU\": \"zxc\",\n        \"productDescription\": \"released on 2020\",\n        \"productPrice\": 90000.0,\n        \"productWeight\": 200.0,\n        \"productCategory\": \"phone\"\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/product/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "config server properties: http://localhost:8888/config-server/default",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/config-server/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"config-server",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateQuantity http://localhost:8082/api/product/updateQuantity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productRequests\": [\n        {\n            \"productId\": 1,\n            \"qty\": 6\n        },\n        {\n            \"productId\": 2,\n            \"qty\": 7\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/product/updateQuantity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"product",
+						"updateQuantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revokeQuantity http://localhost:8082/api/product/revokeQuantity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productRequests\": [\n        {\n            \"productId\": 1,\n            \"qty\": 6\n        },\n        {\n            \"productId\": 2,\n            \"qty\": 7\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/product/revokeQuantity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"product",
+						"revokeQuantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order save http://localhost:8083/api/order/submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"shippingMethod\": \"Dhaka Couriar\",\n    \"totalPrice\": 500.5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/order/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"order",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order list http://localhost:8083/api/order/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/order/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"order",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place order through api Gateway: http://localhost:9090/order-app/api/order/submit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"shippingMethod\": \"Dhaka Couriar\",\n    \"totalPrice\": 500.5,\n    \"productList\": [\n        {\n            \"productId\": 1,\n            \"qty\": 6\n        },\n        {\n            \"productId\": 2,\n            \"qty\": 7\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/order-app/api/order/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"order-app",
+						"api",
+						"order",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Products: http://localhost:9090/product-app/api/product/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/product-app/api/product/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"product-app",
+						"api",
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
